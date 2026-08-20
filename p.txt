@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mithil  Institute Computer Training Institute</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffd43b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd43b;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 60px 7%;
+            background: linear-gradient(135deg, #0b3d91, #1769aa);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd43b;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #ffd43b;
+            color: #111;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0b3d91;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .course-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .course-card h3 {
+            color: #0b3d91;
+            margin-bottom: 12px;
+        }
+
+        .course-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why-us {
+            background: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #0b3d91;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: #0b3d91;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .stat h2 {
+            font-size: 40px;
+            color: #ffd43b;
+        }
+
+        .stat p {
+            margin-top: 8px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            text-align: center;
+            background: #eef4ff;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            color: #0b3d91;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 20px;
+            color: #ffd43b;
+        }
+
+        .footer-box p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .footer-box ul {
+            list-style: none;
+        }
+
+        .footer-box ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-box ul li a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .footer-box ul li a:hover {
+            color: #ffd43b;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #aaa;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .courses,
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .courses,
+            .features,
+            .stats,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="logo">
+            Tech<span>Learn</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Learn Today.
+                <span>Build Your Future.</span>
+            </h1>
+
+            <p>
+                Welcome toMithil Computer Institute.
+                Learn programming, web development, data science and
+                other industry-oriented computer skills through
+                practical training.
+            </p>
+
+            <a href="admissions.html" class="btn">
+                Enroll Now
+            </a>
+
+            <a href="courses.html" class="btn btn-outline">
+                Explore Courses
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Popular Courses</h2>
+
+            <p>
+                Learn the skills that are in demand in today's
+                technology industry.
+            </p>
+
+        </div>
+
+
+        <div class="courses">
+
+            <div class="course-card">
+
+                <div class="course-icon">☕</div>
+
+                <h3>Java Programming</h3>
+
+                <p>
+                    Learn Java programming, OOP concepts,
+                    exception handling and database connectivity.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">🐍</div>
+
+                <h3>Python Programming</h3>
+
+                <p>
+                    Learn Python from basics to advanced concepts
+                    with practical programming exercises.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">🌐</div>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Learn HTML, CSS, JavaScript and create
+                    responsive websites.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">🤖</div>
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+                    Understand the fundamentals of AI,
+                    machine learning and intelligent systems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="why-us">
+
+        <div class="section-title">
+
+            <h2>Why Choose Us?</h2>
+
+            <p>
+                We focus on practical learning and career development.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">👨‍🏫</div>
+
+                <h3>Expert Trainers</h3>
+
+                <p>
+                    Learn from experienced trainers with
+                    practical industry knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">💻</div>
+
+                <h3>Practical Training</h3>
+
+                <p>
+                    Practice concepts through real-world
+                    projects and coding exercises.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🎓</div>
+
+                <h3>Career Guidance</h3>
+
+                <p>
+                    Get guidance for interviews, resumes
+                    and career development.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🏆</div>
+
+                <h3>Certificates</h3>
+
+                <p>
+                    Receive course completion certificates
+                    after successfully completing training.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <h2>1000+</h2>
+            <p>Students Trained</p>
+        </div>
+
+        <div class="stat">
+            <h2>15+</h2>
+            <p>Courses</p>
+        </div>
+
+        <div class="stat">
+            <h2>10+</h2>
+            <p>Expert Trainers</p>
+        </div>
+
+        <div class="stat">
+            <h2>5+</h2>
+            <p>Years Experience</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>Ready to Start Learning?</h2>
+
+        <p>
+            Join Mithil  Institute today and take the next step
+            towards your technology career.
+        </p>
+
+        <a href="admissions.html" class="btn">
+            Apply Now
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-box">
+
+                <h3>Mithil  Institute</h3>
+
+                <p>
+                   Mithil Computer Institute provides
+                    practical and career-oriented computer education
+                    for students and professionals.
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Courses</h3>
+
+                <ul>
+                    <li><a href="courses.html">Java</a></li>
+                    <li><a href="courses.html">Python</a></li>
+                    <li><a href="courses.html">Web Development</a></li>
+                    <li><a href="courses.html">Artificial Intelligence</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Contact</h3>
+
+                <p>
+                    📍 Kurnool, Andhra Pradesh
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ info@Mithil  Institute.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026Mithil Computer Institute.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
